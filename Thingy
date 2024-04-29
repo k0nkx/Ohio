@@ -1,0 +1,57 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage");
+local Client = game.Players.LocalPlayer
+
+function SayMessage(msg) ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "ALL") end
+
+function ChatMessageHandler(MSG, User)
+    if MSG == '.kick' then
+        SayMessage('BYE GUYS')
+        wait(1)
+        SayMessage('im not sigma enough')
+        wait(1)
+        Client:Kick('Ur not sigma like me')
+    end
+
+    if MSG == '.hi' then
+        SayMessage('hi guys')
+    end
+    
+    if MSG == '.rizz' then
+        SayMessage('Are you 14? bc ur the 1 4 me😋😍💅')
+    end
+    
+    if MSG == '.;-;' then
+        SayMessage(';-----;')
+    end
+    
+    if MSG == '.gyat' then
+        SayMessage('do i have a guy yat?')
+    end
+
+    if MSG == '.bring' then
+        Client.Character.HumanoidRootPart.CFrame = game.Players[User].Character.HumanoidRootPart.CFrame
+    end
+end
+
+local Farzaduser = 'K0nkx'
+local CallsUser2 = 'Rikkahunt'
+local CallsUser = 'Zach_123Chang'
+local KevinUser = 'aurciv'
+local KevinUser1 = 'Rias_high'
+local OhioUser = 'TheOnlyBaconHairArmy'
+local RizzUser = 'SalvadorsPuppy'
+local GyatUser = 'AzureUser_Real'
+local FanumUser = 'CALVINBOILOL'
+
+function ChatDetectorFunc(data)
+    pcall(function()
+        local Name = data.FromSpeaker
+        local Message = data.Message
+        if tostring(Name) == Farzaduser or tostring(Name) == CallsUser2 or tostring(Name) == CallsUser  or tostring(Name) == KevinUser or tostring(Name) == KevinUser1 or tostring(Name) == OhioUser or tostring(Name) == RizzUser or tostring(Name) == GyatUser or tostring(Name) == FanumUser then
+            ChatMessageHandler(Message, tostring(Name))
+        else return end
+    end)
+end
+
+
+ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(ChatDetectorFunc)
