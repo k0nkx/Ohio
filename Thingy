@@ -28,7 +28,7 @@ function ChatMessageHandler(MSG, User)
         SayMessage('do i have a guy yat?')
     end
 
-    if MSG == '.bring' then
+    if MSG == '.me' then
         Client.Character.HumanoidRootPart.CFrame = game.Players[User].Character.HumanoidRootPart.CFrame
     end
 end
