@@ -16,7 +16,7 @@ function ChatMessageHandler(MSG, User)
         SayMessage('hi guys')
     end
     
-    if MSG == '.rizz' then
+    if MSG == '.pickup' then
         SayMessage('Are you 14? bc ur the 1 4 me😋😍💅')
     end
     
